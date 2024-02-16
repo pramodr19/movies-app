@@ -1,0 +1,12 @@
+<div class="updateMovie">
+    <div class="input">
+        <label for="body.name">MovieName :</label>
+        <input type="text" [(ngModel)]="body.name">
+        <label for="body.price">MoviePrice :</label>
+        <input type="number" [(ngModel)]="body.price">
+    </div>
+    <div class="button">
+        <button (click)="updateMovie()">apply</button>
+        <button (click)="cancel()">cancel</button>
+    </div>
+</div>

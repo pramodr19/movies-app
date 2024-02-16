@@ -1,0 +1,32 @@
+<div class="getMovies">
+  <div class="table">
+    <h1 *ngIf="dispMessage">{{message}}</h1>
+    <table *ngIf="dispTable" [border]="1">
+      <tr>
+        <th>MID</th>
+        <!-- <th>ID</th> -->
+        <th>MovieName</th>
+        <th>Price</th>
+        <th>Operations</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let m of movies; let i=index">
+          <td>{{i+1}}</td>
+          <!-- <td>{{m.id}}</td> -->
+          <td>{{m.name}}</td>
+          <td>{{m.price}}</td>
+          <td>
+            <button (click)="getDetails(m.id)">getMovie</button>
+            <button (click)="edit(m.id)">editMovie</button>
+            <button (click)="deleteMovie(m.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="addMovie" *ngIf="dispadd" (click)="addMovieButton()">addMovie</button>
+  </div>
+  <div class="movie" *ngFor="let item of moviesid">
+    <h1>{{item[0].name}}</h1>
+    <h1>{{item[0].price}}</h1>
+  </div>
+</div>
